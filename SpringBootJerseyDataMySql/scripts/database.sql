@@ -1,3 +1,5 @@
+CREATE DATABASE TEST;
+
 CREATE TABLE customer(
    id INT NOT NULL AUTO_INCREMENT,
    first_name VARCHAR(100) NOT NULL,
@@ -5,3 +7,5 @@ CREATE TABLE customer(
    email_address VARCHAR(50),
    PRIMARY KEY (id)
 );
+
+COMMIT;
