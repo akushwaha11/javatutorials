@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'springboot-jersey'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE")
+    }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-jersey")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    //MySql database support
+    compile("mysql:mysql-connector-java:6.0.3")    
+    // AssertJ
+    testCompile("org.assertj:assertj-core:1.7.0")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+springBoot {
+    mainClass = "org.ashish.tutorials.webservices.rest.Application"
+}
